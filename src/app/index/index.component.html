@@ -80,40 +80,14 @@
       </ul>
     </div>
     <div class="col-10">
-      <div class="card d-inline-block" style="width: 16rem;">
-        <img class="card-img-top" src="assets/images/NTUT.jpg" alt="泰式皇族">
+      <div *ngFor="let good of goods" class="card d-inline-block" style="width: 16rem;">
+        <img class="card-img-top" [src]="good.src" [alt]="good.altText">
         <div class="card-body">
-          <h5 class="card-title">北科學餐便當</h5>
-          <p class="card-text">NT$ 80</p>
+          <h5 class="card-title">{{good.title}}</h5>
+          <p class="card-text">{{good.priceText}}</p>
           <a href="#" class="btn btn-warning text-light float-right mb-3">訂購</a>
         </div>
       </div>
-      <div class="card d-inline-block" style="width: 16rem;">
-        <img class="card-img-top" src="assets/images/royal.jpg" alt="皇族泰式料理">
-        <div class="card-body">
-          <h5 class="card-title">皇族泰式料理</h5>
-          <p class="card-text">NT$ 4.5 - NT$ 145</p>
-          <a [routerLink]="['../royal']" class="btn btn-warning text-light float-right mb-3">訂購</a>
-        </div>
-      </div>
-      <div class="card d-inline-block" style="width: 16rem;">
-        <img class="card-img-top" src="assets/images/fu-hang.jpg" alt="阜杭豆漿">
-        <div class="card-body">
-          <h5 class="card-title">阜杭豆漿</h5>
-          <p class="card-text">NT$ 15 - NT$ 65</p>
-          <a href="#" class="btn btn-warning text-light float-right mb-3">訂購</a>
-        </div>
-      </div>
-      <div class="card d-inline-block" style="width: 16rem;">
-        <img class="card-img-top" src="assets/images/McDonald's.jpg" alt="麥當勞">
-        <div class="card-body">
-          <h5 class="card-title">麥當勞</h5>
-          <p class="card-text">NT$ ? - NT$ ?</p>
-          <a href="#" class="btn btn-warning text-light float-right mb-3">訂購</a>
-        </div>
-      </div>
-
-
     </div>
   </div>
   <!-- footer -->
