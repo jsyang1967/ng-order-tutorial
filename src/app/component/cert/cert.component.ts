@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderStore } from '../../store/order.store';
 
 @Component({
   selector: 'app-cert',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CertComponent implements OnInit {
 
-  constructor() { }
+  constructor(private orderStore: OrderStore) { }
 
   ngOnInit() {
+  }
+
+  get orderTotal() {
+    return this.orderStore.getOrderList.reduce((a, b) => a + b['total'], 0);
   }
 
 }

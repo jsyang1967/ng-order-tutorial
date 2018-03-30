@@ -85,11 +85,11 @@
         <del>120</del>
       </div>
       <div class="d-inline-block ml-3">特價：
-        <span class="text-warning">120</span>
+        <span class="text-warning">{{filterGood['price']}}</span>
       </div>
 
       <hr class="pb-3">
-      <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <form *ngIf="orderForm" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
         <div class="form-group row">
           <label for="staticEmail" class="col-sm-2 col-form-label">數量</label>
           <div class="col-sm-10">
@@ -97,7 +97,7 @@
               <div class="input-group-prepend">
                 <button class="btn btn-outline-secondary" type="button" (click)="minusnum()">-</button>
               </div>
-              <input formControlName="ordernum" type="number" class="form-control text-center" min="0" placeholder="" aria-label="" aria-describedby="basic-addon1">
+              <input formControlName="orderNum" (keyup)="change(orderForm.controls['orderNum'].value)" type="number" class="form-control text-center" min="0" placeholder="" aria-label="" aria-describedby="basic-addon1">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button" (click)="addnum()">+</button>
               </div>
@@ -117,7 +117,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">NT$</span>
               </div>
-              <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" [value]="total" readonly>
+              <input formControlName="total" type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" readonly>
             </div>
           </div>
         </div>

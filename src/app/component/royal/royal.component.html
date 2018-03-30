@@ -116,7 +116,20 @@
         </div>
       </div>
       <table class="table">
-        <tr>
+        <ng-container *ngFor="let type of storeDetail['goodTypes']">
+          <tr>
+            <th>{{type['goodType']}}</th>
+          </tr>
+          <tr *ngFor="let good of type['goods']">
+            <td class="pl-5">
+              <a [routerLink]="['/page/order-detail/'+ storeDetail['id'] + '/' + type['id'] + '/' + good['id']]">
+                <div class="d-inline-block">{{good['itemName']}}</div>
+                <div class="d-inline-block ml-5">{{good['price']}}</div>
+              </a>
+            </td>
+          </tr>
+        </ng-container>
+        <!-- <tr>
           <th>鍋類</th>
         </tr>
         <tr>
@@ -144,14 +157,6 @@
           </td>
         </tr>
         <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">麻辣牛肉鍋</div>
-              <div class="d-inline-block ml-5">120</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
           <th>河粉</th>
         </tr>
         <tr>
@@ -161,96 +166,9 @@
               <div class="d-inline-block ml-5">145</div>
             </a>
           </td>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">酸辣海鮮河粉</div>
-              <div class="d-inline-block ml-5">145</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">泰式炒河粉</div>
-              <div class="d-inline-block ml-5">145</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th>點心</th>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">摩摩喳喳</div>
-              <div class="d-inline-block ml-5">45</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">芋頭西米露</div>
-              <div class="d-inline-block ml-5">45</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">椰漿黑糯米</div>
-              <div class="d-inline-block ml-5">45</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">蝦片</div>
-              <div class="d-inline-block ml-5">100</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th>飲料</th>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">泰式奶茶</div>
-              <div class="d-inline-block ml-5">45</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th>便當</th>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">打拋豬便當</div>
-              <div class="d-inline-block ml-5">75</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">椰汁雞便當</div>
-              <div class="d-inline-block ml-5">100</div>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td class="pl-5">
-            <a href="#">
-              <div class="d-inline-block">咖喱雞便當</div>
-              <div class="d-inline-block ml-5">100</div>
-            </a>
-          </td>
-        </tr>
+        </tr> -->
+
+
       </table>
     </div>
   </div>
