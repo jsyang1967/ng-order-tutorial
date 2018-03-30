@@ -11,6 +11,8 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { CertComponent } from './cert/cert.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
