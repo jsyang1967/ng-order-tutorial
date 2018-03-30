@@ -1,0 +1,49 @@
+{
+  "goods": [
+    {
+      "id": 1,
+      "title": "北科學餐便當",
+      "src": "assets/images/NTUT.jpg",
+      "altText": "泰式皇族",
+      "priceText": "NT$ 80"
+    },
+    {
+      "id": 2,
+      "title": "皇族泰式料理",
+      "src": "assets/images/royal.jpg",
+      "altText": "皇族泰式料理",
+      "priceText": "NT$ 4.5 - NT$ 145"
+    },
+    {
+      "id": 3,
+      "title": "阜杭豆漿",
+      "src": "assets/images/fu-hang.jpg",
+      "altText": "阜杭豆漿",
+      "priceText": "NT$ 15 - NT$ 65"
+    },
+    {
+      "id": 4,
+      "title": "麥當勞",
+      "src": "assets/images/McDonald's.jpg",
+      "altText": "麥當勞",
+      "priceText": "NT$ ? - NT$ ?"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
