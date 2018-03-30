@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
-import { PageComponent } from './page/page.component';
+import { IndexComponent } from './component/index/index.component';
+import { PageComponent } from './component/page/page.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RoyalComponent } from './royal/royal.component';
-import { OrderDetailComponent } from './order-detail/order-detail.component';
-import { CertComponent } from './cert/cert.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RoyalComponent } from './component/royal/royal.component';
+import { OrderDetailComponent } from './component/order-detail/order-detail.component';
+import { CertComponent } from './component/cert/cert.component';
+import { NavBarComponent } from './component/nav-bar/nav-bar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './public_service/http.service';
 
+import{ ReactiveFormsModule} from '@angular/forms';
+import { OrderStore } from './store/order.store';
 
 @NgModule({
   declarations: [
@@ -24,9 +28,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [HttpService,OrderStore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
